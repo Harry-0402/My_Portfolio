@@ -32,7 +32,7 @@ export default function HomePage() {
             </div>
             <div className="md:w-1/2 flex justify-center md:justify-end">
               <img 
-                src="/images/profile-picture.jpg" 
+                src="/images/profile-picture-closeup.jpg" 
                 alt="Harish Chavan professional portrait" 
                 className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg border-4 border-white" 
               />
