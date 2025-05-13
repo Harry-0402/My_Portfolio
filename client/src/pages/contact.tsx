@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { MapPin, Mail, Phone, Linkedin, Github, Twitter, Dribbble } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin, Github } from "lucide-react";
 import { AnimatedSection } from "@/lib/animated-section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -177,7 +177,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-poppins font-semibold mb-4">Connect With Me</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/harish-chavan-6852b4285"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
@@ -186,31 +186,13 @@ export default function ContactPage() {
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/Harry-0402"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     aria-label="GitHub"
                   >
                     <Github className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="https://dribbble.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    aria-label="Dribbble"
-                  >
-                    <Dribbble className="h-5 w-5" />
                   </a>
                 </div>
               </div>
