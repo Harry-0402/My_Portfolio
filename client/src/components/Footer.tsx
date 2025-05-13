@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Github, Linkedin, Twitter, Dribbble } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -31,7 +31,7 @@ export default function Footer() {
 
           <div className="flex space-x-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/harish-chavan-6852b4285"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors"
@@ -40,31 +40,13 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Harry-0402"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a
-              href="https://dribbble.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors"
-              aria-label="Dribbble"
-            >
-              <Dribbble className="h-5 w-5" />
             </a>
           </div>
         </div>

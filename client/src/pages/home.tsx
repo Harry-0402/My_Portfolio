@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { AnimatedSection } from "@/lib/animated-section";
 import { SkillBar } from "@/components/ui/skill-bar";
 
@@ -61,9 +61,15 @@ export default function HomePage() {
                   className="w-full h-48 object-cover" 
                 />
                 <div className="project-overlay">
-                  <Link href="/projects" className="text-white font-medium px-4 py-2 rounded-md border border-white hover:bg-white hover:text-primary transition-colors">
+                  <a 
+                    href="https://github.com/Harry-0402/Project_02" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-white font-medium px-4 py-2 rounded-md border border-white hover:bg-white hover:text-primary transition-colors flex items-center"
+                  >
                     View Project
-                  </Link>
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
                 </div>
               </div>
               <div className="p-6">
@@ -87,9 +93,15 @@ export default function HomePage() {
                   className="w-full h-48 object-cover" 
                 />
                 <div className="project-overlay">
-                  <Link href="/projects" className="text-white font-medium px-4 py-2 rounded-md border border-white hover:bg-white hover:text-primary transition-colors">
+                  <a 
+                    href="https://github.com/Harry-0402/Projects_01" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-white font-medium px-4 py-2 rounded-md border border-white hover:bg-white hover:text-primary transition-colors flex items-center"
+                  >
                     View Project
-                  </Link>
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
                 </div>
               </div>
               <div className="p-6">
