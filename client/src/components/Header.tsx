@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "./ThemeProvider";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [location] = useLocation();
+  const { theme } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,7 +39,10 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed w-full bg-white shadow-sm z-50 transition-shadow duration-300",
+        "fixed w-full z-50 transition-shadow duration-300",
+        theme === "dark" 
+          ? "bg-dark-900 text-white shadow-md" 
+          : "bg-white shadow-sm",
         scrollPosition > 10 && "shadow-md"
       )}
     >
@@ -44,64 +50,79 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-poppins font-bold">
-              <span className="text-dark">Harish</span>
+              <span className={theme === "dark" ? "text-white" : "text-dark"}>Harish</span>
               <span className="text-primary">Chavan</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link
-              href="/"
-              className={cn(
-                "font-medium transition-colors",
-                isActive("/")
-                  ? "text-primary"
-                  : "text-dark-600 hover:text-primary"
-              )}
-            >
-              Home
-            </Link>
-            <Link
-              href="/projects"
-              className={cn(
-                "font-medium transition-colors",
-                isActive("/projects")
-                  ? "text-primary"
-                  : "text-dark-600 hover:text-primary"
-              )}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/education"
-              className={cn(
-                "font-medium transition-colors",
-                isActive("/education")
-                  ? "text-primary"
-                  : "text-dark-600 hover:text-primary"
-              )}
-            >
-              Education
-            </Link>
-            <Link
-              href="/contact"
-              className={cn(
-                "font-medium transition-colors",
-                isActive("/contact")
-                  ? "text-primary"
-                  : "text-dark-600 hover:text-primary"
-              )}
-            >
-              Contact
-            </Link>
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              <Link
+                href="/"
+                className={cn(
+                  "font-medium transition-colors",
+                  isActive("/")
+                    ? "text-primary"
+                    : theme === "dark" 
+                      ? "text-gray-300 hover:text-primary" 
+                      : "text-dark-600 hover:text-primary"
+                )}
+              >
+                Home
+              </Link>
+              <Link
+                href="/projects"
+                className={cn(
+                  "font-medium transition-colors",
+                  isActive("/projects")
+                    ? "text-primary"
+                    : theme === "dark" 
+                      ? "text-gray-300 hover:text-primary" 
+                      : "text-dark-600 hover:text-primary"
+                )}
+              >
+                Projects
+              </Link>
+              <Link
+                href="/education"
+                className={cn(
+                  "font-medium transition-colors",
+                  isActive("/education")
+                    ? "text-primary"
+                    : theme === "dark" 
+                      ? "text-gray-300 hover:text-primary" 
+                      : "text-dark-600 hover:text-primary"
+                )}
+              >
+                Education
+              </Link>
+              <Link
+                href="/contact"
+                className={cn(
+                  "font-medium transition-colors",
+                  isActive("/contact")
+                    ? "text-primary"
+                    : theme === "dark" 
+                      ? "text-gray-300 hover:text-primary" 
+                      : "text-dark-600 hover:text-primary"
+                )}
+              >
+                Contact
+              </Link>
+            </nav>
+            <ThemeToggle />
+          </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="text-dark-800 focus:outline-none"
+              className={cn(
+                "focus:outline-none",
+                theme === "dark" ? "text-white" : "text-dark-800"
+              )}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -123,8 +144,10 @@ export default function Header() {
                 className={cn(
                   "block px-3 py-2 rounded-md font-medium transition-colors",
                   isActive("/")
-                    ? "text-primary bg-gray-50"
-                    : "text-dark-600 hover:text-primary hover:bg-gray-50"
+                    ? "text-primary"
+                    : theme === "dark"
+                      ? "text-gray-300 hover:text-primary hover:bg-dark-800"
+                      : "text-dark-600 hover:text-primary hover:bg-gray-50"
                 )}
               >
                 Home
@@ -135,8 +158,10 @@ export default function Header() {
                 className={cn(
                   "block px-3 py-2 rounded-md font-medium transition-colors",
                   isActive("/projects")
-                    ? "text-primary bg-gray-50"
-                    : "text-dark-600 hover:text-primary hover:bg-gray-50"
+                    ? "text-primary"
+                    : theme === "dark"
+                      ? "text-gray-300 hover:text-primary hover:bg-dark-800"
+                      : "text-dark-600 hover:text-primary hover:bg-gray-50"
                 )}
               >
                 Projects
@@ -147,8 +172,10 @@ export default function Header() {
                 className={cn(
                   "block px-3 py-2 rounded-md font-medium transition-colors",
                   isActive("/education")
-                    ? "text-primary bg-gray-50"
-                    : "text-dark-600 hover:text-primary hover:bg-gray-50"
+                    ? "text-primary"
+                    : theme === "dark"
+                      ? "text-gray-300 hover:text-primary hover:bg-dark-800"
+                      : "text-dark-600 hover:text-primary hover:bg-gray-50"
                 )}
               >
                 Education
@@ -159,8 +186,10 @@ export default function Header() {
                 className={cn(
                   "block px-3 py-2 rounded-md font-medium transition-colors",
                   isActive("/contact")
-                    ? "text-primary bg-gray-50"
-                    : "text-dark-600 hover:text-primary hover:bg-gray-50"
+                    ? "text-primary"
+                    : theme === "dark"
+                      ? "text-gray-300 hover:text-primary hover:bg-dark-800"
+                      : "text-dark-600 hover:text-primary hover:bg-gray-50"
                 )}
               >
                 Contact
