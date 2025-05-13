@@ -32,8 +32,8 @@ export default function HomePage() {
             </div>
             <div className="md:w-1/2 flex justify-center md:justify-end">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
-                alt="John Doe professional portrait" 
+                src="/images/profile-picture.jpg" 
+                alt="Harish Chavan professional portrait" 
                 className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg border-4 border-white" 
               />
             </div>
