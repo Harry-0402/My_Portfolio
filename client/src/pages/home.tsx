@@ -2,8 +2,13 @@ import { Link } from "wouter";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { AnimatedSection } from "@/lib/animated-section";
 import { SkillBar } from "@/components/ui/skill-bar";
+import { useTheme } from "@/components/ThemeProvider";
+import { cn } from "@/lib/utils";
 
 export default function HomePage() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  
   return (
     <>
       {/* Hero Section */}
@@ -11,21 +16,38 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-12 md:mb-0">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins mb-4 text-dark-900">
+              <h1 className={cn(
+                "text-4xl md:text-5xl lg:text-6xl font-bold font-poppins mb-4",
+                isDark ? "text-white" : "text-dark-900"
+              )}>
                 Hi, I'm <span className="text-primary">Harish Chavan</span>
               </h1>
-              <h2 className="text-xl md:text-2xl font-poppins font-medium mb-6 text-dark-600">
+              <h2 className={cn(
+                "text-xl md:text-2xl font-poppins font-medium mb-6",
+                isDark ? "text-gray-300" : "text-dark-600"
+              )}>
                 Actuarial Science Student
               </h2>
-              <p className="text-lg text-dark-500 mb-8 leading-relaxed max-w-2xl">
+              <p className={cn(
+                "text-lg mb-8 leading-relaxed max-w-2xl",
+                isDark ? "text-gray-400" : "text-dark-500"
+              )}>
                 Detail-oriented and analytical undergraduate currently pursuing a B.Sc. in Actuarial Science. I have a solid foundation in mathematics, statistics, and financial modeling, complemented by hands-on experience in data analysis and risk assessment.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/projects" className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-700 transition-colors">
+                <Link href="/projects" className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-600 transition-colors">
                   View My Work
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-                <Link href="/contact" className="inline-flex items-center px-6 py-3 bg-white text-primary border border-primary font-medium rounded-md hover:bg-primary-50 transition-colors">
+                <Link 
+                  href="/contact" 
+                  className={cn(
+                    "inline-flex items-center px-6 py-3 font-medium rounded-md transition-colors border",
+                    isDark 
+                      ? "bg-dark-700 text-primary border-primary hover:bg-dark-600" 
+                      : "bg-white text-primary border-primary hover:bg-primary-50"
+                  )}
+                >
                   Contact Me
                 </Link>
               </div>
@@ -34,7 +56,10 @@ export default function HomePage() {
               <img 
                 src="/images/profile-picture-closeup.jpg" 
                 alt="Harish Chavan professional portrait" 
-                className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg border-4 border-white" 
+                className={cn(
+                  "rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg border-4",
+                  isDark ? "border-dark-600" : "border-white"
+                )}
               />
             </div>
           </div>
@@ -42,7 +67,10 @@ export default function HomePage() {
       </section>
 
       {/* Featured Projects Section */}
-      <AnimatedSection className="py-20 bg-gray-100">
+      <AnimatedSection className={cn(
+        "py-20",
+        isDark ? "bg-dark-700" : "bg-gray-100"
+      )}>
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="section-title">Featured Projects</h2>
@@ -73,8 +101,14 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-poppins font-semibold mb-2">Real Estate Price Prediction</h3>
-                <p className="text-dark-500 mb-4">A comprehensive model integrating Excel, Python, and R to predict real estate prices with high accuracy.</p>
+                <h3 className={cn(
+                  "text-xl font-poppins font-semibold mb-2",
+                  isDark ? "text-white" : ""
+                )}>Real Estate Price Prediction</h3>
+                <p className={cn(
+                  "mb-4",
+                  isDark ? "text-gray-300" : "text-dark-500"
+                )}>A comprehensive model integrating Excel, Python, and R to predict real estate prices with high accuracy.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="tag">Python</span>
                   <span className="tag">R</span>
@@ -105,8 +139,14 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-poppins font-semibold mb-2">Excel Projects Collection</h3>
-                <p className="text-dark-500 mb-4">A collection of Excel projects including Bike Sales Dashboard, Payroll System, and an interactive GradeBook.</p>
+                <h3 className={cn(
+                  "text-xl font-poppins font-semibold mb-2",
+                  isDark ? "text-white" : ""
+                )}>Excel Projects Collection</h3>
+                <p className={cn(
+                  "mb-4",
+                  isDark ? "text-gray-300" : "text-dark-500"
+                )}>A collection of Excel projects including Bike Sales Dashboard, Payroll System, and an interactive GradeBook.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="tag">MS Excel</span>
                   <span className="tag">Data Visualization</span>
@@ -118,7 +158,15 @@ export default function HomePage() {
           </div>
           
           <div className="text-center mt-12">
-            <Link href="/projects" className="inline-flex items-center px-6 py-3 bg-white text-primary border border-primary font-medium rounded-md hover:bg-primary-50 transition-colors">
+            <Link 
+              href="/projects" 
+              className={cn(
+                "inline-flex items-center px-6 py-3 font-medium rounded-md transition-colors border",
+                isDark 
+                  ? "bg-dark-700 text-primary border-primary hover:bg-dark-600" 
+                  : "bg-white text-primary border-primary hover:bg-primary-50"
+              )}
+            >
               View All Projects
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -138,21 +186,27 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <div>
-              <h3 className="text-xl font-poppins font-semibold mb-6">Technical Skills</h3>
+              <h3 className={cn(
+                "text-xl font-poppins font-semibold mb-6",
+                isDark ? "text-white" : ""
+              )}>Technical Skills</h3>
               
-              <SkillBar name="MS Excel" percentage={90} />
-              <SkillBar name="Python" percentage={75} />
-              <SkillBar name="R" percentage={70} />
-              <SkillBar name="Data Analysis" percentage={85} />
+              <SkillBar name="MS Excel" percentage={90} className={isDark ? "text-white" : ""} />
+              <SkillBar name="Python" percentage={75} className={isDark ? "text-white" : ""} />
+              <SkillBar name="R" percentage={70} className={isDark ? "text-white" : ""} />
+              <SkillBar name="Data Analysis" percentage={85} className={isDark ? "text-white" : ""} />
             </div>
             
             <div>
-              <h3 className="text-xl font-poppins font-semibold mb-6">Professional Skills</h3>
+              <h3 className={cn(
+                "text-xl font-poppins font-semibold mb-6",
+                isDark ? "text-white" : ""
+              )}>Professional Skills</h3>
               
-              <SkillBar name="Communication" percentage={85} />
-              <SkillBar name="Leadership" percentage={80} />
-              <SkillBar name="Decision Making" percentage={85} />
-              <SkillBar name="Adaptability" percentage={90} />
+              <SkillBar name="Communication" percentage={85} className={isDark ? "text-white" : ""} />
+              <SkillBar name="Leadership" percentage={80} className={isDark ? "text-white" : ""} />
+              <SkillBar name="Decision Making" percentage={85} className={isDark ? "text-white" : ""} />
+              <SkillBar name="Adaptability" percentage={90} className={isDark ? "text-white" : ""} />
             </div>
           </div>
         </div>
