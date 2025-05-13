@@ -5,51 +5,35 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A complete e-commerce solution with product management, cart functionality, and secure checkout.",
-      image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      title: "Real Estate Price Prediction and Analysis",
+      description: "Developed a comprehensive real estate price prediction model by integrating Excel, Python, and R to leverage their respective strengths in data handling, statistical analysis, and visualization.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
       link: "#",
-      tags: ["React", "Node.js", "MongoDB", "Express"]
+      tags: ["Python", "R", "Excel", "Data Analysis", "Regression Models"]
     },
     {
       id: 2,
-      title: "Fitness Tracker App",
-      description: "A mobile application that helps users track workouts, set goals, and monitor fitness progress.",
-      image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      title: "Bike Sales Dashboard",
+      description: "Created a Bike Sales Dashboard to track sales, revenue, and customer data using Excel charts and pivot tables for data visualization and business insights.",
+      image: "https://images.unsplash.com/photo-1571333250630-f0230c320b6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
       link: "#",
-      tags: ["React Native", "Firebase", "Redux"]
+      tags: ["MS Excel", "Data Visualization", "Pivot Tables", "Dashboard Design"]
     },
     {
       id: 3,
-      title: "Analytics Dashboard",
-      description: "Interactive dashboard for business analytics with real-time data visualization and reporting.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      title: "Payroll System",
+      description: "Designed a comprehensive Payroll System using Excel to calculate salaries with automated formulas, tax deductions, and generate employee payment reports.",
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
       link: "#",
-      tags: ["Vue.js", "D3.js", "Express"]
+      tags: ["MS Excel", "Formulas", "Financial Modeling", "Automation"]
     },
     {
       id: 4,
-      title: "Social Media App",
-      description: "A social networking platform with real-time messaging, profile customization, and content sharing.",
-      image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+      title: "GradeBook System",
+      description: "Built a GradeBook system to record and analyze employee performance with easy-to-use formatting, conditional formatting, and statistical summaries.",
+      image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
       link: "#",
-      tags: ["React", "Socket.io", "GraphQL", "MongoDB"]
-    },
-    {
-      id: 5,
-      title: "Task Management System",
-      description: "A comprehensive project and task management tool for teams, featuring kanban boards, task assignments, and progress tracking.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      link: "#",
-      tags: ["Angular", "TypeScript", "Node.js", "PostgreSQL"]
-    },
-    {
-      id: 6,
-      title: "Weather Forecast App",
-      description: "Real-time weather application with location detection, forecasts, and severe weather alerts.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      link: "#",
-      tags: ["React", "Open Weather API", "Geolocation API"]
+      tags: ["MS Excel", "Data Analysis", "Conditional Formatting", "Statistical Analysis"]
     }
   ];
 
@@ -60,8 +44,8 @@ export default function ProjectsPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold font-poppins mb-4 text-dark-900">My Projects</h1>
             <p className="text-lg text-dark-500">
-              I've worked on a diverse range of projects, from web applications to mobile experiences.
-              Each project presented unique challenges and opportunities for growth.
+              I've worked on a diverse range of projects focusing on data analysis, statistical modeling, and financial systems.
+              Each project allowed me to apply my analytical skills to solve real-world problems.
             </p>
           </div>
         </div>

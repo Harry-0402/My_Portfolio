@@ -156,18 +156,18 @@ export default function ContactPage() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <MapPin className="h-5 w-5 text-primary mt-1 mr-3" />
-                    <span className="text-dark-500">123 Tech Lane, San Francisco, CA 94107, USA</span>
+                    <span className="text-dark-500">Jalgaon, Maharashtra, India</span>
                   </li>
                   <li className="flex items-center">
                     <Mail className="h-5 w-5 text-primary mr-3" />
-                    <a href="mailto:johndoe@example.com" className="text-dark-500 hover:text-primary transition-colors">
-                      johndoe@example.com
+                    <a href="mailto:hrchavan0402@gmail.com" className="text-dark-500 hover:text-primary transition-colors">
+                      hrchavan0402@gmail.com
                     </a>
                   </li>
                   <li className="flex items-center">
                     <Phone className="h-5 w-5 text-primary mr-3" />
-                    <a href="tel:+14155550122" className="text-dark-500 hover:text-primary transition-colors">
-                      +1 (415) 555-0122
+                    <a href="tel:+917030430756" className="text-dark-500 hover:text-primary transition-colors">
+                      +91 7030430756
                     </a>
                   </li>
                 </ul>

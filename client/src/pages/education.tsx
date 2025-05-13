@@ -4,27 +4,27 @@ export default function EducationPage() {
   const educationItems = [
     {
       id: 1,
-      period: "2018 - 2022",
-      institution: "University of Technology",
-      degree: "Bachelor of Science in Computer Science",
-      description: "Graduated with honors. Specialized in software engineering and human-computer interaction.",
-      skills: ["Algorithm Design", "Web Development", "Data Structures", "Object-Oriented Programming"]
+      period: "2022 - 2025",
+      institution: "K.B.C.N.M.U, Jalgaon",
+      degree: "B.Sc. in Actuarial Science",
+      description: "Currently pursuing undergraduate degree with focus on mathematics, statistics, and financial modeling.",
+      skills: ["Statistics", "Mathematics", "Financial Modeling", "Data Analysis"]
     },
     {
       id: 2,
-      period: "2022 - 2023",
-      institution: "Design Institute",
-      degree: "Certificate in User Experience Design",
-      description: "Advanced program focused on user research, prototyping, and interaction design principles.",
-      skills: ["User Research", "Prototyping", "UI/UX Design", "Wireframing"]
+      period: "2021 - 2022",
+      institution: "K.S.K.W College, Nashik",
+      degree: "HSC (Class XII)",
+      description: "Completed Higher Secondary Certificate with 80.17% marks.",
+      skills: ["Mathematics", "Statistics", "Physics", "Chemistry"]
     },
     {
       id: 3,
-      period: "2023",
-      institution: "Tech Academy",
-      degree: "Full-Stack Development Bootcamp",
-      description: "Intensive program covering modern web development technologies and best practices.",
-      skills: ["React", "Node.js", "MongoDB", "RESTful APIs"]
+      period: "2019 - 2020",
+      institution: "High School Ranjangaon, Jalgaon",
+      degree: "SSC (Class X)",
+      description: "Completed Secondary School Certificate with 90.20% marks.",
+      skills: ["Mathematics", "Science", "Language Arts", "Social Studies"]
     }
   ];
 
@@ -75,34 +75,26 @@ export default function EducationPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="mb-4">
-                  <span className="text-primary font-semibold">2023</span>
+                  <span className="text-primary font-semibold">May 2025</span>
                 </div>
-                <h3 className="font-semibold mb-2">AWS Certified Solutions Architect</h3>
-                <p className="text-dark-500 text-sm">Amazon Web Services</p>
+                <h3 className="font-semibold mb-2">Python</h3>
+                <p className="text-dark-500 text-sm">CERT-5C6ECA00</p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="mb-4">
-                  <span className="text-primary font-semibold">2022</span>
+                  <span className="text-primary font-semibold">May 2025</span>
                 </div>
-                <h3 className="font-semibold mb-2">Google UX Design Professional Certificate</h3>
-                <p className="text-dark-500 text-sm">Google / Coursera</p>
+                <h3 className="font-semibold mb-2">R Programming for Beginners</h3>
+                <p className="text-dark-500 text-sm">CERT: 8330139</p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="mb-4">
-                  <span className="text-primary font-semibold">2021</span>
+                  <span className="text-primary font-semibold">May 2025</span>
                 </div>
-                <h3 className="font-semibold mb-2">Meta Front-End Developer Certificate</h3>
-                <p className="text-dark-500 text-sm">Meta / Coursera</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="mb-4">
-                  <span className="text-primary font-semibold">2020</span>
-                </div>
-                <h3 className="font-semibold mb-2">Scrum Master Certification</h3>
-                <p className="text-dark-500 text-sm">Scrum Alliance</p>
+                <h3 className="font-semibold mb-2">Excel</h3>
+                <p className="text-dark-500 text-sm">CERT-8A3C66B9</p>
               </div>
             </div>
           </div>
