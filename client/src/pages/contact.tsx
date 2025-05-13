@@ -36,20 +36,31 @@ export default function ContactPage() {
     setIsSubmitting(true);
     
     try {
-      // In a real app, you would submit the form data to your backend
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) });
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-        variant: "default",
+      // Submit the form data to the backend API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
       });
       
-      form.reset();
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+          variant: "default",
+        });
+        
+        form.reset();
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
     } catch (error) {
+      console.error('Error sending message:', error);
+      
       toast({
         title: "Something went wrong.",
         description: "Your message couldn't be sent. Please try again later.",
