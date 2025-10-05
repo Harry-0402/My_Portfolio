@@ -79,82 +79,128 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Project Card 1 */}
-            <article className="project-card">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
-                  alt="Real Estate Price Prediction project" 
-                  className="w-full h-48 object-cover" 
-                />
-                <div className="project-overlay">
-                  <a 
-                    href="https://github.com/Harry-0402/Project_02" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-white font-medium px-4 py-2 rounded-md border border-white hover:bg-white hover:text-primary transition-colors flex items-center"
-                  >
-                    View Project
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-              <div className="p-6">
+            <a
+              href="https://github.com/Harry-0402/Project_02"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "group block rounded-xl p-6 transition-all duration-300 border hover:shadow-lg",
+                isDark 
+                  ? "bg-dark-800 border-dark-600 hover:border-primary-500" 
+                  : "bg-white border-gray-200 hover:border-primary-400"
+              )}
+              data-testid="project-card-1"
+            >
+              <div className="flex items-start justify-between mb-4">
                 <h3 className={cn(
-                  "text-xl font-poppins font-semibold mb-2",
-                  isDark ? "text-white" : ""
-                )}>Real Estate Price Prediction</h3>
-                <p className={cn(
-                  "mb-4",
-                  isDark ? "text-gray-300" : "text-dark-500"
-                )}>A comprehensive model integrating Excel, Python, and R to predict real estate prices with high accuracy.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="tag">Python</span>
-                  <span className="tag">R</span>
-                  <span className="tag">Excel</span>
-                  <span className="tag">Data Analysis</span>
-                </div>
+                  "text-2xl font-poppins font-bold transition-colors",
+                  isDark ? "text-white group-hover:text-primary-400" : "text-dark-900 group-hover:text-primary-600"
+                )}>
+                  Real Estate Price Prediction
+                </h3>
+                <ExternalLink className={cn(
+                  "h-5 w-5 transition-all group-hover:translate-x-1",
+                  isDark ? "text-gray-400 group-hover:text-primary-400" : "text-gray-500 group-hover:text-primary-600"
+                )} />
               </div>
-            </article>
+              
+              <p className={cn(
+                "mb-6 leading-relaxed",
+                isDark ? "text-gray-300" : "text-dark-500"
+              )}>
+                A comprehensive model integrating Excel, Python, and R to predict real estate prices with high accuracy.
+              </p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Python</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>R</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Excel</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Data Analysis</span>
+              </div>
+            </a>
             
             {/* Project Card 2 */}
-            <article className="project-card">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
-                  alt="Excel projects" 
-                  className="w-full h-48 object-cover" 
-                />
-                <div className="project-overlay">
-                  <a 
-                    href="https://github.com/Harry-0402/Projects_01" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-white font-medium px-4 py-2 rounded-md border border-white hover:bg-white hover:text-primary transition-colors flex items-center"
-                  >
-                    View Project
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-              <div className="p-6">
+            <a
+              href="https://github.com/Harry-0402/Projects_01"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "group block rounded-xl p-6 transition-all duration-300 border hover:shadow-lg",
+                isDark 
+                  ? "bg-dark-800 border-dark-600 hover:border-primary-500" 
+                  : "bg-white border-gray-200 hover:border-primary-400"
+              )}
+              data-testid="project-card-2"
+            >
+              <div className="flex items-start justify-between mb-4">
                 <h3 className={cn(
-                  "text-xl font-poppins font-semibold mb-2",
-                  isDark ? "text-white" : ""
-                )}>Excel Projects Collection</h3>
-                <p className={cn(
-                  "mb-4",
-                  isDark ? "text-gray-300" : "text-dark-500"
-                )}>A collection of Excel projects including Bike Sales Dashboard, Payroll System, and an interactive GradeBook.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="tag">MS Excel</span>
-                  <span className="tag">Data Visualization</span>
-                  <span className="tag">Pivot Tables</span>
-                  <span className="tag">Formulas</span>
-                </div>
+                  "text-2xl font-poppins font-bold transition-colors",
+                  isDark ? "text-white group-hover:text-primary-400" : "text-dark-900 group-hover:text-primary-600"
+                )}>
+                  Excel Projects Collection
+                </h3>
+                <ExternalLink className={cn(
+                  "h-5 w-5 transition-all group-hover:translate-x-1",
+                  isDark ? "text-gray-400 group-hover:text-primary-400" : "text-gray-500 group-hover:text-primary-600"
+                )} />
               </div>
-            </article>
+              
+              <p className={cn(
+                "mb-6 leading-relaxed",
+                isDark ? "text-gray-300" : "text-dark-500"
+              )}>
+                A collection of Excel projects including Bike Sales Dashboard, Payroll System, and an interactive GradeBook.
+              </p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>MS Excel</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Data Visualization</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Pivot Tables</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Formulas</span>
+              </div>
+            </a>
           </div>
           
           <div className="text-center mt-12">
