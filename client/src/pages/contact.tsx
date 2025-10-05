@@ -63,28 +63,6 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="pt-28 pb-8 md:pt-32">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className={cn(
-              "text-4xl md:text-5xl font-bold font-poppins mb-4",
-              isDark ? "text-white" : "text-dark-900"
-            )}>
-              Contact Details
-            </h1>
-            <p className={cn(
-              "text-lg",
-              isDark ? "text-gray-300" : "text-dark-500"
-            )}>
-              Feel free to reach out to me through any of the following methods.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <AnimatedSection className="pb-20">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
             <Card className={cn(
               "rounded-xl shadow-md p-8 mt-12",
               isDark ? "bg-dark-700" : "bg-white"
@@ -235,6 +213,28 @@ export default function ContactPage() {
                 </Button>
               </form>
             </Card>
+       <section className="pt-28 pb-8 md:pt-32">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className={cn(
+              "text-4xl md:text-5xl font-bold font-poppins mb-4",
+              isDark ? "text-white" : "text-dark-900"
+            )}>
+              Contact Details
+            </h1>
+            <p className={cn(
+              "text-lg",
+              isDark ? "text-gray-300" : "text-dark-500"
+            )}>
+              Feel free to reach out to me through any of the following methods.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <AnimatedSection className="pb-20">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
             <Card className={cn(
               "rounded-xl shadow-md p-8 mb-12",
               isDark ? "bg-dark-700" : "bg-white"
