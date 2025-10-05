@@ -86,6 +86,156 @@ export default function ContactPage() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <Card className={cn(
+              "rounded-xl shadow-md p-8 mt-12",
+              isDark ? "bg-dark-700" : "bg-white"
+            )}>
+              <h2 className={cn(
+                "text-2xl font-poppins font-semibold mb-2 text-center",
+                isDark ? "text-white" : ""
+              )}>
+                Send Me a Message
+              </h2>
+              <p className={cn(
+                "text-center mb-8",
+                isDark ? "text-gray-300" : "text-dark-500"
+              )}>
+                Have a question or want to work together? Fill out the form below.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label 
+                      htmlFor="name" 
+                      className={cn(
+                        "block text-sm font-medium mb-2",
+                        isDark ? "text-gray-200" : "text-dark-700"
+                      )}
+                    >
+                      Name *
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your name"
+                      className={cn(
+                        isDark 
+                          ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                          : "bg-white border-gray-300"
+                      )}
+                      data-testid="input-name"
+                    />
+                  </div>
+
+                  <div>
+                    <label 
+                      htmlFor="email" 
+                      className={cn(
+                        "block text-sm font-medium mb-2",
+                        isDark ? "text-gray-200" : "text-dark-700"
+                      )}
+                    >
+                      Email *
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your.email@example.com"
+                      className={cn(
+                        isDark 
+                          ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                          : "bg-white border-gray-300"
+                      )}
+                      data-testid="input-email"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label 
+                    htmlFor="subject" 
+                    className={cn(
+                      "block text-sm font-medium mb-2",
+                      isDark ? "text-gray-200" : "text-dark-700"
+                    )}
+                  >
+                    Subject *
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="What's this about?"
+                    className={cn(
+                      isDark 
+                        ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                        : "bg-white border-gray-300"
+                    )}
+                    data-testid="input-subject"
+                  />
+                </div>
+
+                <div>
+                  <label 
+                    htmlFor="message" 
+                    className={cn(
+                      "block text-sm font-medium mb-2",
+                      isDark ? "text-gray-200" : "text-dark-700"
+                    )}
+                  >
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Your message..."
+                    rows={5}
+                    className={cn(
+                      isDark 
+                        ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                        : "bg-white border-gray-300"
+                    )}
+                    data-testid="input-message"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={cn(
+                    "w-full",
+                    isDark
+                      ? "bg-primary-600 hover:bg-primary-700"
+                      : "bg-primary hover:bg-primary-600"
+                  )}
+                  data-testid="button-submit"
+                >
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+              </form>
+            </Card>
+            <Card className={cn(
               "rounded-xl shadow-md p-8 mb-12",
               isDark ? "bg-dark-700" : "bg-white"
             )}>
@@ -251,157 +401,6 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-            </Card>
-
-            <Card className={cn(
-              "rounded-xl shadow-md p-8 mt-12",
-              isDark ? "bg-dark-700" : "bg-white"
-            )}>
-              <h2 className={cn(
-                "text-2xl font-poppins font-semibold mb-2 text-center",
-                isDark ? "text-white" : ""
-              )}>
-                Send Me a Message
-              </h2>
-              <p className={cn(
-                "text-center mb-8",
-                isDark ? "text-gray-300" : "text-dark-500"
-              )}>
-                Have a question or want to work together? Fill out the form below.
-              </p>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label 
-                      htmlFor="name" 
-                      className={cn(
-                        "block text-sm font-medium mb-2",
-                        isDark ? "text-gray-200" : "text-dark-700"
-                      )}
-                    >
-                      Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Your name"
-                      className={cn(
-                        isDark 
-                          ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
-                          : "bg-white border-gray-300"
-                      )}
-                      data-testid="input-name"
-                    />
-                  </div>
-
-                  <div>
-                    <label 
-                      htmlFor="email" 
-                      className={cn(
-                        "block text-sm font-medium mb-2",
-                        isDark ? "text-gray-200" : "text-dark-700"
-                      )}
-                    >
-                      Email *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="your.email@example.com"
-                      className={cn(
-                        isDark 
-                          ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
-                          : "bg-white border-gray-300"
-                      )}
-                      data-testid="input-email"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label 
-                    htmlFor="subject" 
-                    className={cn(
-                      "block text-sm font-medium mb-2",
-                      isDark ? "text-gray-200" : "text-dark-700"
-                    )}
-                  >
-                    Subject *
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="What's this about?"
-                    className={cn(
-                      isDark 
-                        ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
-                        : "bg-white border-gray-300"
-                    )}
-                    data-testid="input-subject"
-                  />
-                </div>
-
-                <div>
-                  <label 
-                    htmlFor="message" 
-                    className={cn(
-                      "block text-sm font-medium mb-2",
-                      isDark ? "text-gray-200" : "text-dark-700"
-                    )}
-                  >
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Your message..."
-                    rows={5}
-                    className={cn(
-                      isDark 
-                        ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
-                        : "bg-white border-gray-300"
-                    )}
-                    data-testid="input-message"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={cn(
-                    "w-full",
-                    isDark
-                      ? "bg-primary-600 hover:bg-primary-700"
-                      : "bg-primary hover:bg-primary-600"
-                  )}
-                  data-testid="button-submit"
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
             </Card>
           </div>
         </div>
