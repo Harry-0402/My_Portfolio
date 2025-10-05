@@ -82,7 +82,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Project Card 1 */}
             <a
-              href="https://github.com/Harry-0402/Project_02"
+              href="https://github.com/Harry-0402/Project_02---SuperStore-Sales-Analysis"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
@@ -98,7 +98,7 @@ export default function HomePage() {
                   "text-2xl font-poppins font-bold transition-colors",
                   isDark ? "text-white group-hover:text-primary-400" : "text-dark-900 group-hover:text-primary-600"
                 )}>
-                  Real Estate Price Prediction
+                  SuperStore Sales Analysis
                 </h3>
                 <ExternalLink className={cn(
                   "h-5 w-5 transition-all group-hover:translate-x-1",
@@ -110,7 +110,7 @@ export default function HomePage() {
                 "mb-6 leading-relaxed",
                 isDark ? "text-gray-300" : "text-dark-500"
               )}>
-                A comprehensive model integrating Excel, Python, and R to predict real estate prices with high accuracy.
+                Comprehensive sales analysis of a retail superstore using data analytics techniques to uncover insights, trends, and patterns in sales performance.
               </p>
               
               <div className="flex flex-wrap gap-2">
@@ -119,13 +119,13 @@ export default function HomePage() {
                   isDark 
                     ? "bg-dark-600 text-gray-300 border border-dark-500" 
                     : "bg-primary-50 text-primary-700 border border-primary-200"
-                )}>Python</span>
+                )}>Data Analysis</span>
                 <span className={cn(
                   "px-3 py-1 text-sm rounded-full font-medium",
                   isDark 
                     ? "bg-dark-600 text-gray-300 border border-dark-500" 
                     : "bg-primary-50 text-primary-700 border border-primary-200"
-                )}>R</span>
+                )}>Sales Analytics</span>
                 <span className={cn(
                   "px-3 py-1 text-sm rounded-full font-medium",
                   isDark 
@@ -137,7 +137,7 @@ export default function HomePage() {
                   isDark 
                     ? "bg-dark-600 text-gray-300 border border-dark-500" 
                     : "bg-primary-50 text-primary-700 border border-primary-200"
-                )}>Data Analysis</span>
+                )}>Visualization</span>
               </div>
             </a>
             

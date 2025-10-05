@@ -10,10 +10,10 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
-      title: "Real Estate Price Prediction and Analysis",
-      description: "Developed a comprehensive real estate price prediction model by integrating Excel, Python, and R to leverage their respective strengths in data handling, statistical analysis, and visualization.",
-      link: "https://github.com/Harry-0402/Project_02",
-      tags: ["Python", "R", "Excel", "Data Analysis", "Regression Models"]
+      title: "SuperStore Sales Analysis",
+      description: "Comprehensive sales analysis of a retail superstore using data analytics techniques to uncover insights, trends, and patterns in sales performance across different product categories and regions.",
+      link: "https://github.com/Harry-0402/Project_02---SuperStore-Sales-Analysis",
+      tags: ["Data Analysis", "Sales Analytics", "Business Intelligence", "Excel", "Visualization"]
     },
     {
       id: 2,
