@@ -14,8 +14,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <section id="home" className="pt-28 pb-20 md:pt-36 md:pb-24">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-12 md:mb-0">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="md:w-1/2 mb-4 md:mb-0">
               <h1 className={cn(
                 "text-4xl md:text-5xl lg:text-6xl font-bold font-poppins mb-4",
                 isDark ? "text-white" : "text-dark-900"
@@ -29,7 +29,7 @@ export default function HomePage() {
                 Actuarial Science Student
               </h2>
               <p className={cn(
-                "text-lg mb-8 leading-relaxed max-w-2xl",
+                "text-lg mb-8 leading-relaxed",
                 isDark ? "text-gray-400" : "text-dark-500"
               )}>
                 Detail-oriented and analytical undergraduate currently pursuing a B.Sc. in Actuarial Science. I have a solid foundation in mathematics, statistics, and financial modeling, complemented by hands-on experience in data analysis and risk assessment.
