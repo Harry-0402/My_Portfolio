@@ -110,7 +110,7 @@ export default function HomePage() {
                 "mb-6 leading-relaxed",
                 isDark ? "text-gray-300" : "text-dark-500"
               )}>
-                Comprehensive sales analysis of a retail superstore using data analytics techniques to uncover insights, trends, and patterns in sales performance.
+                Comprehensive sales analysis using Power BI for visualization and Python for data preprocessing to uncover insights and patterns in sales performance.
               </p>
               
               <div className="flex flex-wrap gap-2">
@@ -119,25 +119,25 @@ export default function HomePage() {
                   isDark 
                     ? "bg-dark-600 text-gray-300 border border-dark-500" 
                     : "bg-primary-50 text-primary-700 border border-primary-200"
-                )}>Data Analysis</span>
+                )}>Power BI</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Python</span>
+                <span className={cn(
+                  "px-3 py-1 text-sm rounded-full font-medium",
+                  isDark 
+                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                    : "bg-primary-50 text-primary-700 border border-primary-200"
+                )}>Data Preprocessing</span>
                 <span className={cn(
                   "px-3 py-1 text-sm rounded-full font-medium",
                   isDark 
                     ? "bg-dark-600 text-gray-300 border border-dark-500" 
                     : "bg-primary-50 text-primary-700 border border-primary-200"
                 )}>Sales Analytics</span>
-                <span className={cn(
-                  "px-3 py-1 text-sm rounded-full font-medium",
-                  isDark 
-                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
-                    : "bg-primary-50 text-primary-700 border border-primary-200"
-                )}>Excel</span>
-                <span className={cn(
-                  "px-3 py-1 text-sm rounded-full font-medium",
-                  isDark 
-                    ? "bg-dark-600 text-gray-300 border border-dark-500" 
-                    : "bg-primary-50 text-primary-700 border border-primary-200"
-                )}>Visualization</span>
               </div>
             </a>
             

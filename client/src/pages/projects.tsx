@@ -11,9 +11,9 @@ export default function ProjectsPage() {
     {
       id: 1,
       title: "SuperStore Sales Analysis",
-      description: "Comprehensive sales analysis of a retail superstore using data analytics techniques to uncover insights, trends, and patterns in sales performance across different product categories and regions.",
+      description: "Comprehensive sales analysis of a retail superstore using Power BI for visualization and Python for data preprocessing to uncover insights, trends, and patterns in sales performance across different product categories and regions.",
       link: "https://github.com/Harry-0402/Project_02---SuperStore-Sales-Analysis",
-      tags: ["Data Analysis", "Sales Analytics", "Business Intelligence", "Excel", "Visualization"]
+      tags: ["Power BI", "Python", "Data Preprocessing", "Sales Analytics", "Business Intelligence"]
     },
     {
       id: 2,
