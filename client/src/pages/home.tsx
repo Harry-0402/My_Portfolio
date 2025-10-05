@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Download, FileText } from "lucide-react";
 import { AnimatedSection } from "@/lib/animated-section";
 import { SkillBar } from "@/components/ui/skill-bar";
 import { useTheme } from "@/components/ThemeProvider";
@@ -61,6 +61,76 @@ export default function HomePage() {
                   isDark ? "border-dark-600" : "border-white"
                 )}
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resume Download Section */}
+      <section className="py-16">
+        <div className="container-custom">
+          <div className={cn(
+            "max-w-3xl mx-auto rounded-2xl p-8 md:p-12 text-center border-2",
+            isDark 
+              ? "bg-dark-700 border-primary-600" 
+              : "bg-gradient-to-br from-primary-50 to-white border-primary-200"
+          )}>
+            <div className="flex justify-center mb-6">
+              <div className={cn(
+                "p-4 rounded-full",
+                isDark ? "bg-primary-600" : "bg-primary-100"
+              )}>
+                <FileText className={cn(
+                  "h-8 w-8",
+                  isDark ? "text-white" : "text-primary-600"
+                )} />
+              </div>
+            </div>
+            
+            <h2 className={cn(
+              "text-3xl md:text-4xl font-bold font-poppins mb-4",
+              isDark ? "text-white" : "text-dark-900"
+            )}>
+              Download My Resume
+            </h2>
+            
+            <p className={cn(
+              "text-lg mb-8",
+              isDark ? "text-gray-300" : "text-dark-600"
+            )}>
+              Get a copy of my resume to learn more about my qualifications, experience, and skills.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a
+                href="/resume/Harish_Chavan_Resume.pdf"
+                download
+                className={cn(
+                  "inline-flex items-center px-6 py-3 font-medium rounded-md transition-all duration-300 shadow-md hover:shadow-lg",
+                  isDark
+                    ? "bg-primary-600 text-white hover:bg-primary-700"
+                    : "bg-primary-600 text-white hover:bg-primary-700"
+                )}
+                data-testid="download-pdf"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download PDF
+              </a>
+              
+              <a
+                href="/resume/Harish_Chavan_Resume.docx"
+                download
+                className={cn(
+                  "inline-flex items-center px-6 py-3 font-medium rounded-md transition-all duration-300 border-2",
+                  isDark
+                    ? "bg-dark-800 border-primary-500 text-primary-400 hover:bg-dark-600"
+                    : "bg-white border-primary-600 text-primary-700 hover:bg-primary-50"
+                )}
+                data-testid="download-docx"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download DOCX
+              </a>
             </div>
           </div>
         </div>
