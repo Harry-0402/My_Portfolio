@@ -44,51 +44,56 @@ export default function ProjectsPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project) => (
-              <article 
-                key={project.id} 
+              <a
+                key={project.id}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
-                  "rounded-lg overflow-hidden transition-all duration-300 border",
-                  isDark ? "bg-dark-700 border-dark-600" : "bg-white border-gray-200"
+                  "group block rounded-xl p-6 transition-all duration-300 border hover:shadow-lg",
+                  isDark 
+                    ? "bg-dark-700 border-dark-600 hover:border-primary-500" 
+                    : "bg-white border-gray-200 hover:border-primary-400"
                 )}
                 data-testid={`project-card-${project.id}`}
               >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "block py-6 px-6 font-poppins font-bold text-2xl transition-all duration-300 flex items-center justify-between group",
-                    isDark 
-                      ? "bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800" 
-                      : "bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700"
-                  )}
-                  data-testid={`project-link-${project.id}`}
-                >
-                  <span>{project.title}</span>
-                  <ExternalLink className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-                </a>
-                <div className="p-6">
-                  <p className={cn("mb-4 leading-relaxed", isDark ? "text-gray-300" : "text-dark-500")}>
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, index) => (
-                      <span 
-                        key={index} 
-                        className={cn(
-                          "px-3 py-1 text-sm rounded-full font-medium transition-colors",
-                          isDark 
-                            ? "bg-dark-600 text-gray-200 border border-dark-500" 
-                            : "bg-primary-50 text-primary-700 border border-primary-200"
-                        )}
-                        data-testid={`project-tag-${index}`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className={cn(
+                    "text-2xl font-poppins font-bold transition-colors",
+                    isDark ? "text-white group-hover:text-primary-400" : "text-dark-900 group-hover:text-primary-600"
+                  )}>
+                    {project.title}
+                  </h3>
+                  <ExternalLink className={cn(
+                    "h-5 w-5 transition-all group-hover:translate-x-1",
+                    isDark ? "text-gray-400 group-hover:text-primary-400" : "text-gray-500 group-hover:text-primary-600"
+                  )} />
                 </div>
-              </article>
+                
+                <p className={cn(
+                  "mb-6 leading-relaxed",
+                  isDark ? "text-gray-300" : "text-dark-500"
+                )}>
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, index) => (
+                    <span 
+                      key={index} 
+                      className={cn(
+                        "px-3 py-1 text-sm rounded-full font-medium",
+                        isDark 
+                          ? "bg-dark-600 text-gray-300 border border-dark-500" 
+                          : "bg-primary-50 text-primary-700 border border-primary-200"
+                      )}
+                      data-testid={`project-tag-${index}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </a>
             ))}
           </div>
         </div>
