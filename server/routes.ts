@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 import { ZodError } from "zod";
+import { saveContactToSheet } from "./google-sheets";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API endpoint for contact form
@@ -75,6 +76,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ 
         message: 'An error occurred while retrieving the message', 
         success: false 
+      });
+    }
+  });
+
+  // New API endpoint for contact form with Google Sheets
+  app.post('/api/contact-sheet', async (req: Request, res: Response) => {
+    try {
+      const { name, email, subject, message } = req.body;
+      
+      if (!name || !email || !subject || !message) {
+        return res.status(400).json({
+          message: 'All fields are required',
+          success: false
+        });
+      }
+
+      await saveContactToSheet({ name, email, subject, message });
+      
+      return res.status(200).json({
+        message: 'Message sent successfully',
+        success: true
+      });
+    } catch (error) {
+      console.error('Error saving to Google Sheets:', error);
+      return res.status(500).json({
+        message: 'Failed to send message. Please try again.',
+        success: false
       });
     }
   });

@@ -1,12 +1,65 @@
-import { MapPin, Mail, Phone, Linkedin, Github } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin, Github, Send } from "lucide-react";
 import { AnimatedSection } from "@/lib/animated-section";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useTheme } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function ContactPage() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact-sheet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -198,6 +251,157 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+            </Card>
+
+            <Card className={cn(
+              "rounded-xl shadow-md p-8 mt-12",
+              isDark ? "bg-dark-700" : "bg-white"
+            )}>
+              <h2 className={cn(
+                "text-2xl font-poppins font-semibold mb-2 text-center",
+                isDark ? "text-white" : ""
+              )}>
+                Send Me a Message
+              </h2>
+              <p className={cn(
+                "text-center mb-8",
+                isDark ? "text-gray-300" : "text-dark-500"
+              )}>
+                Have a question or want to work together? Fill out the form below.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label 
+                      htmlFor="name" 
+                      className={cn(
+                        "block text-sm font-medium mb-2",
+                        isDark ? "text-gray-200" : "text-dark-700"
+                      )}
+                    >
+                      Name *
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your name"
+                      className={cn(
+                        isDark 
+                          ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                          : "bg-white border-gray-300"
+                      )}
+                      data-testid="input-name"
+                    />
+                  </div>
+
+                  <div>
+                    <label 
+                      htmlFor="email" 
+                      className={cn(
+                        "block text-sm font-medium mb-2",
+                        isDark ? "text-gray-200" : "text-dark-700"
+                      )}
+                    >
+                      Email *
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your.email@example.com"
+                      className={cn(
+                        isDark 
+                          ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                          : "bg-white border-gray-300"
+                      )}
+                      data-testid="input-email"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label 
+                    htmlFor="subject" 
+                    className={cn(
+                      "block text-sm font-medium mb-2",
+                      isDark ? "text-gray-200" : "text-dark-700"
+                    )}
+                  >
+                    Subject *
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="What's this about?"
+                    className={cn(
+                      isDark 
+                        ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                        : "bg-white border-gray-300"
+                    )}
+                    data-testid="input-subject"
+                  />
+                </div>
+
+                <div>
+                  <label 
+                    htmlFor="message" 
+                    className={cn(
+                      "block text-sm font-medium mb-2",
+                      isDark ? "text-gray-200" : "text-dark-700"
+                    )}
+                  >
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Your message..."
+                    rows={5}
+                    className={cn(
+                      isDark 
+                        ? "bg-dark-600 border-dark-500 text-white placeholder:text-gray-400" 
+                        : "bg-white border-gray-300"
+                    )}
+                    data-testid="input-message"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={cn(
+                    "w-full",
+                    isDark
+                      ? "bg-primary-600 hover:bg-primary-700"
+                      : "bg-primary hover:bg-primary-600"
+                  )}
+                  data-testid="button-submit"
+                >
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+              </form>
             </Card>
           </div>
         </div>
